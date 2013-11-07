@@ -1,0 +1,117 @@
+window.requestAnimFrame = (function(callback) 
+{
+   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
+      window.setTimeout(callback, 1000/30);
+   }
+})();
+ 
+var testPage = {
+
+  load: function()
+  {
+    document.controller = new Iris.Controller("ws://localhost:9002"); 
+    $('a#quickstart').click(function(e){ e.preventDefault(); testPage.beginTest(); return false; });
+  },
+
+  beginTest: function()
+  {
+    if(this._canvas) delete this._canvas;
+    $('.main').prepend('<canvas id="test"></canvas>');
+    $('canvas#test')
+      .css({
+        position:"fixed",
+        zIndex: 2999
+      })
+      .animate({width: window.innerWidth + "px"}, 500)
+      .animate({height: (window.innerHeight - 83) + "px"}, 500);
+    this._target = new Image();
+    this._target.src = "<%= asset_path 'ball_icon.png' %>";
+    this._canvas = document.getElementById('test');
+    var context = this._canvas.getContext('2d');
+    context.fillStyle = 'black';
+    context.fillRect(0, 0, this._canvas.width, this._canvas.height);
+    //this._canvas.webkitRequestFullScreen();
+    document.controller.beginTracking();
+    $("button#cancel").css({"visibility":"visible"});
+    testPage.animate((new Date()).getTime());
+  },
+
+  cancel: function()
+  {
+    $("button#cancel").css({"visibility":"hidden"});
+    document.controller.endTracking();
+    $('canvas#test').remove();
+  },
+
+  save: function()
+  {
+    var xml = "<run>\n<testname>scripts/smooth_pursuit.lua</testname>\n<score>" + document.controller._score + "</score>\n"
+    xml = xml + "<camera>\n<test>\n"
+    var log = document.controller._log;
+    for(var i = 0; i < log.length; i++)
+    {
+      xml = xml + log[i].timestamp + "," + log[i].target.x + "," + log[i].target.y + "," + log[i].pupil.x + ","+ log[i].pupil.y + ","+ log[i].gaze.x + ","+ log[i].gaze.y + "," + log[i].pupil_size.x + "," + log[i].pupil_size.y + "\n";
+    }
+    xml = xml + "</test>\n</camera>\n</run>"
+    writeLogFile(xml, (new Date()).getTime() + ".xml");
+  },
+
+  animate: function(start_time)
+  {
+    this._canvas.width = this._canvas.offsetWidth;
+    this._canvas.height = this._canvas.offsetHeight;
+    var context = this._canvas.getContext('2d');
+    var radius = Math.min(this._canvas.width, this._canvas.height) * 0.4;
+
+    var context = this._canvas.getContext('2d');
+    context.fillStyle = 'black';
+    context.fillRect(0, 0, this._canvas.width, this._canvas.height);
+    
+    var elapsed_time = ((new Date()).getTime() - start_time) / 1000.0;
+    var x = 0;
+    var y = 0;
+    if(elapsed_time < 40)
+    {
+      if (elapsed_time < 6)
+      {
+        x = 0;
+        y = 0;
+      }
+      else if(elapsed_time < 21)
+      {
+        var radians_per_second = 2 * Math.PI * 0.4; // 0.4 Hz   
+        var theta = (elapsed_time - 6) * radians_per_second - (Math.PI / 2);
+        x = radius * Math.cos(theta);
+        y = radius * Math.sin(theta);
+      }
+      else if(elapsed_time < 23)
+      {
+        x = 0;
+        y = 0;
+      }
+      else if(elapsed_time < 38)
+      {
+        var radians_per_second = 2 * Math.PI * 0.4; // 0.4 Hz   
+        var theta = (elapsed_time - 8) * radians_per_second - (Math.PI / 2);
+        x = radius * Math.cos(theta);
+        y = radius * Math.sin(theta);
+      }
+      else
+      {
+        x = 0;
+        y = 0;
+      }
+      context.drawImage(this._target, x + this._canvas.width / 2 - this._target.width / 2, 
+        y + this._canvas.height / 2 - this._target.height / 2); 
+      document.controller.setTarget(x, y);
+      requestAnimFrame(function() {
+        testPage.animate(start_time);
+      });
+    }
+    else
+    {
+      testPage.cancel();
+      document.controller.requestLog(this.save);
+    }  
+  }
+}
