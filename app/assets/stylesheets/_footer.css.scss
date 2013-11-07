@@ -10,7 +10,7 @@
 
 .bottom-logo{
 	@include ir;
-	background: url(image_path('BLINK_logo_small.png')) center center no-repeat transparent;
+	background: url('BLINK_logo_small.png') center center no-repeat transparent;
 	display: block;
 	height: $footer-height;
 	padding-left:4%;
