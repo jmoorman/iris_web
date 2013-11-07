@@ -1,0 +1,33 @@
+window.requestAnimFrame = (function(callback) 
+{
+   return window.requestAnimationFrame || window.webkitRequestAnimationFrame || window.mozRequestAnimationFrame || window.oRequestAnimationFrame || window.msRequestAnimationFrame || function(callback) {
+      window.setTimeout(callback, 1000/30);
+   }
+})();
+
+var calibrationPage = {
+  
+  load: function()
+  {
+    $(".back").click( function() {
+      document.controller.endTracking();
+      location.href = "/";
+    });
+
+
+    $('div#left').replaceWith('<canvas id="left" width="240px" height="320px"></canvas>');
+    document.controller = new Iris.Controller("ws://localhost:9002");
+    setTimeout(function(){
+      document.controller.beginTracking(false);
+      calibrationPage.updateImage();
+    }, 1000/30);
+  },
+
+  updateImage: function()
+  {
+    document.controller.requestImage(function(){
+      document.controller.showImage(document.getElementById('left'));
+      calibrationPage.updateImage();
+    })
+  }
+};
