@@ -6,7 +6,7 @@ body{
 
 .logo{
 	@include ir;
-	background-image: url('img/assets/BLINK_logo.png');
+	background-image: url('BLINK_logo.png');
 	height: 80px;
 	background-repeat:no-repeat;
 	background-position:center center;
@@ -113,7 +113,7 @@ body{
 	}
 	&.back{
 		padding-left:30px;
-		background-image: url('img/assets/arrow_white.png');
+		background-image: url('arrow_white.png');
 		background-position: 4px 9px;
 		background-repeat: no-repeat;
 	}
@@ -166,36 +166,36 @@ body{
 */
 
 .quickstart a{
-	background-image: url('img/assets/quick_start.png');
+	background-image: url('quick_start.png');
 	&:hover{
-		background-image: url('img/assets/quick_start_down.png');
+		background-image: url('quick_start_down.png');
 	}
 	&:after{
-		content: url('img/assets/quick_start_down.png');
+		content: url('quick_start_down.png');
 		display:none;
 	}
 	
 }
 
 .select-assessment a{
-	background-image: url('img/assets/select_assessment.png');
+	background-image: url('select_assessment.png');
 	&:hover{
-		background-image: url('img/assets/select_assessment_down.png');
+		background-image: url('select_assessment_down.png');
 	}
 	&:after{
-		content: url('img/assets/select_assessment_down.png');
+		content: url('select_assessment_down.png');
 		display:none;
 	}
 
 
 }
 .records a{
-	background-image: url('img/assets/records_button.png');
+	background-image: url('records_button.png');
 	&:hover{
-		background-image: url('img/assets/records_down.png');
+		background-image: url('records_down.png');
 	}
 	&:after{
-		content: url('img/assets/records_down.png');
+		content: url('records_down.png');
 		display:none;
 	}
 
@@ -205,34 +205,34 @@ body{
 
 
  .checkeyes a{
-	background-image: url('img/assets/checkeyes.png');
+	background-image: url('checkeyes.png');
 	&:hover{
-		background-image: url('img/assets/checkeyes_down.png');
+		background-image: url('checkeyes_down.png');
 	}
 	&:after{
-		content: url('img/assets/checkeyes_down.png');
+		content: url('checkeyes_down.png');
 		display:none;
 	}
 
 }
 .cloverleaf a{
-	background-image: url('img/assets/cloverleaf.png');
+	background-image: url('cloverleaf.png');
 	&:hover{
-		background-image: url('img/assets/cloverleaf_down.png');
+		background-image: url('cloverleaf_down.png');
 	}
 	&:after{
-		content: url('img/assets/cloverleaf_down.png');
+		content: url('cloverleaf_down.png');
 		display:none;
 	}
 
 }
 .dotreaction a{
-	background-image: url('img/assets/dotreaction.png');
+	background-image: url('dotreaction.png');
 	&:hover{
-		background-image: url('img/assets/dotreaction_down.png');
+		background-image: url('dotreaction_down.png');
 	}
 	&:after{
-		content: url('img/assets/dotreaction_down.png');
+		content: url('dotreaction_down.png');
 		display:none;
 	}
 
@@ -240,34 +240,34 @@ body{
 
 
 .ellipse a{
-	background-image: url('img/assets/ellipse.png');
+	background-image: url('ellipse.png');
 	&:hover{
-		background-image: url('img/assets/ellipse_down.png');
+		background-image: url('ellipse_down.png');
 	}
 	&:after{
-		content: url('img/assets/ellipse_down.png');
+		content: url('ellipse_down.png');
 		display:none;
 	}
 
 }
 .select-assessment a{
-	background-image: url('img/assets/select_assessment.png');
+	background-image: url('select_assessment.png');
 	&:hover{
-		background-image: url('img/assets/select_assessment_down.png');
+		background-image: url('select_assessment_down.png');
 	}
 	&:after{
-		content: url('img/assets/select_assessment_down.png');
+		content: url('select_assessment_down.png');
 		display:none;
 	}
 
 }
 .feedbackmode a{
-	background-image: url('img/assets/feedbackmode.png');
+	background-image: url('feedbackmode.png');
 	&:hover{
-		background-image: url('img/assets/feedbackmode_down.png');
+		background-image: url('feedbackmode_down.png');
 	}
 	&:after{
-		content: url('img/assets/feedbackmode_down.png');
+		content: url('feedbackmode_down.png');
 		display:none;
 	}
 
@@ -275,104 +275,104 @@ body{
 
 
 .figure-8 a{
-	background-image: url('img/assets/figure_8.png');
+	background-image: url('figure_8.png');
 	&:hover{
-		background-image: url('img/assets/figure_8_down.png');
+		background-image: url('figure_8_down.png');
 	}
 	&:after{
-		content: url('img/assets/figure_8_down.png');
+		content: url('figure_8_down.png');
 		display:none;
 	}
 
 }
 .gazereader a{
-	background-image: url('img/assets/gazereader.png');
+	background-image: url('gazereader.png');
 	&:hover{
-		background-image: url('img/assets/gaze_reader_down.png');
+		background-image: url('gaze_reader_down.png');
 	}
 	&:after{
-		content: url('img/assets/gaze_reader_down.png');
+		content: url('gaze_reader_down.png');
 		display:none;
 	}
 
 }
 .horizontal a{
-	background-image: url('img/assets/horizontal.png');
+	background-image: url('horizontal.png');
 	&:hover{
-		background-image: url('img/assets/horizontal_down.png');
+		background-image: url('horizontal_down.png');
 	}
 	&:after{
-		content: url('img/assets/horizontal_down.png');
+		content: url('horizontal_down.png');
 		display:none;
 	}
 
 }
 
 .rotating-figure-8 a{
-	background-image: url('img/assets/rotating_figure8.png');
+	background-image: url('rotating_figure8.png');
 	&:hover{
-		background-image: url('img/assets/rotating_figure8_down.png');
+		background-image: url('rotating_figure8_down.png');
 	}
 	&:after{
-		content: url('img/assets/rotating_figure8_down.png');
+		content: url('rotating_figure8_down.png');
 		display:none;
 	}
 
 }
 .rounded-rectangle a{
-	background-image: url('img/assets/rounded_rectangle.png');
+	background-image: url('rounded_rectangle.png');
 	&:hover{
-		background-image: url('img/assets/rounded_rectangle_down.png');
+		background-image: url('rounded_rectangle_down.png');
 	}
 	&:after{
-		content: url('img/assets/rounded_rectangle_down.png');
+		content: url('rounded_rectangle_down.png');
 		display:none;
 	}
 
 }
 .sinucircle a{
-	background-image: url('img/assets/sinucircle.png');
+	background-image: url('sinucircle.png');
 	&:hover{
-		background-image: url('img/assets/sinucircle_down.png');
+		background-image: url('sinucircle_down.png');
 	}
 	&:after{
-		content: url('img/assets/sinucircle_down.png');
+		content: url('sinucircle_down.png');
 		display:none;
 	}
 
 }    
 
 .smoothpursuit a{
-	background-image: url('img/assets/smoothpursuit.png');
+	background-image: url('smoothpursuit.png');
 	&:hover{
-		background-image: url('img/assets/smoothpursuit_down.png');
+		background-image: url('smoothpursuit_down.png');
 	}
 	&:after{
-		content: url('img/assets/smoothpursuit_down.png');
+		content: url('smoothpursuit_down.png');
 		display:none;
 	}
 
 }
 
 .smoothpursuit2 a{
-	background-image: url('img/assets/smoothpursuit2.png');
+	background-image: url('smoothpursuit2.png');
 	&:hover{
-		background-image: url('img/assets/smoothpursuit2_down.png');
+		background-image: url('smoothpursuit2_down.png');
 	}
 	&:after{
-		content: url('img/assets/smoothpursuit2_down.png');
+		content: url('smoothpursuit2_down.png');
 		display:none;
 	}
 
 }
 
 .spiral a{
-	background-image: url('img/assets/spiral.png');
+	background-image: url('spiral.png');
 	&:hover{
-		background-image: url('img/assets/spiral_down.png');
+		background-image: url('spiral_down.png');
 	}
 	&:after{
-		content: url('img/assets/spiral_down.png');
+		content: url('spiral_down.png');
 		display:none;
 	}
 
@@ -380,12 +380,12 @@ body{
 
 
 .vertical a{
-	background-image: url('img/assets/vertical.png');
+	background-image: url('vertical.png');
 	&:hover{
-		background-image: url('img/assets/vertical_down.png');
+		background-image: url('vertical_down.png');
 	}
 	&:after{
-		content: url('img/assets/vertical_down.png');
+		content: url('vertical_down.png');
 		display:none;
 	}
 
@@ -393,12 +393,12 @@ body{
 
 
 .zone a{
-	background-image: url('img/assets/zone.png');
+	background-image: url('zone.png');
 	&:hover{
-		background-image: url('img/assets/zone_down.png');
+		background-image: url('zone_down.png');
 	}
 	&:after{
-		content: url('img/assets/zone_down.png');
+		content: url('zone_down.png');
 		display:none;
 	}
 
@@ -419,83 +419,83 @@ tr .icon, .icon-title{
 }
 
 .checkeyes-icon{
-	background-image: url('img/assets/checkeyes_icon.png');
+	background-image: url('checkeyes_icon.png');
 	
 }
 .cloverleaf-icon{
-	background-image: url('img/assets/cloverleaf_icon.png');
+	background-image: url('cloverleaf_icon.png');
 	
 }
 .dotreaction-icon{
-	background-image: url('img/assets/dotreaction_icon.png');
+	background-image: url('dotreaction_icon.png');
 	
 }
 
 
 .ellipse-icon{
-	background-image: url('img/assets/ellipse_icon.png');
+	background-image: url('ellipse_icon.png');
 	
 }
 .select-assessment-icon{
-	background-image: url('img/assets/select_assessment_icon.png');
+	background-image: url('select_assessment_icon.png');
 	
 }
 .feedbackmode-icon{
-	background-image: url('img/assets/feedbackmode_icon.png');
+	background-image: url('feedbackmode_icon.png');
 	
 }
 
 
 .figure-8-icon{
-	background-image: url('img/assets/figure_8_icon.png');
+	background-image: url('figure_8_icon.png');
 	
 }
 .gazereader-icon{
-	background-image: url('img/assets/gazereader_icon.png');
+	background-image: url('gazereader_icon.png');
 	
 }
 .horizontal-icon{
-	background-image: url('img/assets/horizontal_icon.png');
+	background-image: url('horizontal_icon.png');
 	
 }
 
 .rotating-figure-8-icon{
-	background-image: url('img/assets/rotating_figure8_icon.png');
+	background-image: url('rotating_figure8_icon.png');
 	
 }
 .rounded-rectangle-icon{
-	background-image: url('img/assets/roundedrectangle_icon.png');
+	background-image: url('roundedrectangle_icon.png');
 	
 }
 .sinucircle-icon{
-	background-image: url('img/assets/sinucircle_icon.png');
+	background-image: url('sinucircle_icon.png');
 	
 }    
 
 .smoothpursuit-icon{
-	background-image: url('img/assets/smoothpursuit_icon.png');
+	background-image: url('smoothpursuit_icon.png');
 	
 }
 
 .smoothpursuit2-icon{
-	background-image: url('img/assets/smoothpursuit2_icon.png');
+	background-image: url('smoothpursuit2_icon.png');
 	
 }
 
 .spiral-icon{
-	background-image: url('img/assets/spiral_icon.png');
+	background-image: url('spiral_icon.png');
 	
 }
 
 
 .vertical-icon{
-	background-image: url('img/assets/vertical_icon.png');
+	background-image: url('vertical_icon.png');
 	
 }
 
 
 .zone-icon{
-	background-image: url('img/assets/zone_icon.png');
+	background-image: url('zone_icon.png');
 	
 }
 

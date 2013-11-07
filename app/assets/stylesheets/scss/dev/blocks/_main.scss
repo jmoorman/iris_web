@@ -126,12 +126,12 @@
 .prev{
 	right:100px;
 	top:27px;
-	background-image: url('img/assets/arrow_left.png');
+	background-image: url('arrow_left.png');
 }
 .next{
 	left:100px;
 	bottom:22px;
-	background-image: url('img/assets/arrow_right.png');
+	background-image: url('arrow_right.png');
 }
 
 
@@ -148,7 +148,7 @@
 .eye-instruction{
 	width:47%;
 	
-	background-image: url('img/assets/eye_rects.png');
+	background-image: url('eye_rects.png');
 	background-repeat: no-repeat;
 	background-color:transparent;
 
@@ -172,7 +172,7 @@
 		line-height:140px;
 		margin-top: 23px;
 		background-repeat:no-repeat;
-		background-image: url('img/assets/webcam.png');
+		background-image: url('webcam.png');
 		background-color: transparent;
 		background-position: center center;
 	}

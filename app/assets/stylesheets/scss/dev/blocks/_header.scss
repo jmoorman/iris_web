@@ -19,7 +19,7 @@ $header-height:83px;
 
 .top-logo{
 	@include ir;
-	background: url('img/logo.png') center center no-repeat transparent;
+	background: url('logo.png') center center no-repeat transparent;
 	display: block;
 	height: $header-height;
 	padding-right:4%;
