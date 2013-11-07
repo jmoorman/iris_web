@@ -1,0 +1,503 @@
+body{
+	@include radial-gradient($lightest-gradient-blue, $darkest-gradient-blue, $fallback: $darkest-gradient-blue );
+	color:$white;
+}
+
+
+.logo{
+	@include ir;
+	background-image: url('img/assets/BLINK_logo.png');
+	height: 80px;
+	background-repeat:no-repeat;
+	background-position:center center;
+	box-shadow: 0 1px 0 $white;
+	padding: 30px 0 20px 0;
+}
+
+
+.main{
+	padding-top:83px;
+}
+.content{
+	display:block;
+	width:1090px;
+	margin:40px auto 40px;
+	
+	@include clrfx;
+}
+.box-wrap{
+	@include clrfx;
+}
+.landing .box{
+	
+	
+	width: 31%;
+	margin-right:3%;
+	float:left;
+
+	&.box-3{
+		margin-right:0;
+	}
+	a{
+		display:block;
+		height:210px;
+		width:100%;
+		@include ir;
+		background-repeat:no-repeat;
+		background-color:transparent;
+		background-position:center center;
+		margin:20px 0 30px;
+	}
+}
+.assessments .box{
+	
+	
+	width: 23%;
+	margin-right:(8%/3);
+	float:left;
+
+	&.box-4,&.box-8,&.box-12,&.box-16,&.box20{
+		margin-right:0;
+	}
+	a{
+		display:block;
+		height:110px;
+		width:100%;
+		@include ir;
+		background-repeat:no-repeat;
+		background-color:transparent;
+		background-position:25px top;
+		padding-bottom:20px;
+		
+	}
+	.hr{
+		width:190px;
+		height:1px;
+		box-shadow: 0 -1px 0 $white;
+		margin:0 auto;
+		@include clrfx;
+	}
+	h3{
+		
+		margin:0 auto 40px;
+		padding-top:8px;
+		text-align:center;
+		
+		text-transform:uppercase;
+		@include dosis;
+
+	}
+}
+/***buttons***/
+
+.pill{
+	border-radius: 30px;
+	color: white;
+	border:none;
+	padding:12px 25px 8px;
+	background-color: $green;
+	text-transform: uppercase;
+	box-shadow: inset 0 4px 4px darken($green, 20%);
+	&:focus{
+		outline:none;
+	}
+	&:hover{
+		background-color: lighten($green, 10%);
+	}
+	&.active{
+		background-color: $red;
+		box-shadow: inset 0 4px 4px darken($red, 20%);
+		&:hover{
+			background-color: $red;
+		}
+	}
+	&.back{
+		padding-left:30px;
+		background-image: url('img/assets/arrow_white.png');
+		background-position: 4px 9px;
+		background-repeat: no-repeat;
+	}
+}
+.controls .pill{
+	width:90px;
+	padding: 12px 0 8px;
+}
+/* classnames
+.quickstart 
+.quickstart-icon
+.select-assessment 
+.select-assessment-icon
+.records 
+.records-icon
+.checkeyes 
+.checkeyes-icon
+.cloverleaf 
+.cloverleaf-icon
+.dotreaction 
+.dotreaction-icon
+.ellipse 
+.ellipse-icon
+.select-assessment 
+.select-assessment-icon
+.feedbackmode 
+.feedbackmode-icon
+.figure-8 
+.figure-8-icon
+.gazereader 
+.gazereader-icon
+.horizontal 
+.horizontal-icon
+.rotating-figure-8 
+.rotating-figure-8-icon
+.rounded-rectangle 
+.rounded-rectangle-icon
+.sinucircle 
+.sinucircle-icon
+.smoothpursuit 
+.smoothpursuit-icon
+.smoothpursuit2 
+.smoothpursuit2-icon
+.spiral 
+.spiral-icon
+.vertical 
+.vertical-icon
+.zone 
+.zone-icon
+*/
+
+.quickstart a{
+	background-image: url('img/assets/quick_start.png');
+	&:hover{
+		background-image: url('img/assets/quick_start_down.png');
+	}
+	&:after{
+		content: url('img/assets/quick_start_down.png');
+		display:none;
+	}
+	
+}
+
+.select-assessment a{
+	background-image: url('img/assets/select_assessment.png');
+	&:hover{
+		background-image: url('img/assets/select_assessment_down.png');
+	}
+	&:after{
+		content: url('img/assets/select_assessment_down.png');
+		display:none;
+	}
+
+
+}
+.records a{
+	background-image: url('img/assets/records_button.png');
+	&:hover{
+		background-image: url('img/assets/records_down.png');
+	}
+	&:after{
+		content: url('img/assets/records_down.png');
+		display:none;
+	}
+
+}
+
+ 
+
+
+ .checkeyes a{
+	background-image: url('img/assets/checkeyes.png');
+	&:hover{
+		background-image: url('img/assets/checkeyes_down.png');
+	}
+	&:after{
+		content: url('img/assets/checkeyes_down.png');
+		display:none;
+	}
+
+}
+.cloverleaf a{
+	background-image: url('img/assets/cloverleaf.png');
+	&:hover{
+		background-image: url('img/assets/cloverleaf_down.png');
+	}
+	&:after{
+		content: url('img/assets/cloverleaf_down.png');
+		display:none;
+	}
+
+}
+.dotreaction a{
+	background-image: url('img/assets/dotreaction.png');
+	&:hover{
+		background-image: url('img/assets/dotreaction_down.png');
+	}
+	&:after{
+		content: url('img/assets/dotreaction_down.png');
+		display:none;
+	}
+
+}
+
+
+.ellipse a{
+	background-image: url('img/assets/ellipse.png');
+	&:hover{
+		background-image: url('img/assets/ellipse_down.png');
+	}
+	&:after{
+		content: url('img/assets/ellipse_down.png');
+		display:none;
+	}
+
+}
+.select-assessment a{
+	background-image: url('img/assets/select_assessment.png');
+	&:hover{
+		background-image: url('img/assets/select_assessment_down.png');
+	}
+	&:after{
+		content: url('img/assets/select_assessment_down.png');
+		display:none;
+	}
+
+}
+.feedbackmode a{
+	background-image: url('img/assets/feedbackmode.png');
+	&:hover{
+		background-image: url('img/assets/feedbackmode_down.png');
+	}
+	&:after{
+		content: url('img/assets/feedbackmode_down.png');
+		display:none;
+	}
+
+}
+
+
+.figure-8 a{
+	background-image: url('img/assets/figure_8.png');
+	&:hover{
+		background-image: url('img/assets/figure_8_down.png');
+	}
+	&:after{
+		content: url('img/assets/figure_8_down.png');
+		display:none;
+	}
+
+}
+.gazereader a{
+	background-image: url('img/assets/gazereader.png');
+	&:hover{
+		background-image: url('img/assets/gaze_reader_down.png');
+	}
+	&:after{
+		content: url('img/assets/gaze_reader_down.png');
+		display:none;
+	}
+
+}
+.horizontal a{
+	background-image: url('img/assets/horizontal.png');
+	&:hover{
+		background-image: url('img/assets/horizontal_down.png');
+	}
+	&:after{
+		content: url('img/assets/horizontal_down.png');
+		display:none;
+	}
+
+}
+
+.rotating-figure-8 a{
+	background-image: url('img/assets/rotating_figure8.png');
+	&:hover{
+		background-image: url('img/assets/rotating_figure8_down.png');
+	}
+	&:after{
+		content: url('img/assets/rotating_figure8_down.png');
+		display:none;
+	}
+
+}
+.rounded-rectangle a{
+	background-image: url('img/assets/rounded_rectangle.png');
+	&:hover{
+		background-image: url('img/assets/rounded_rectangle_down.png');
+	}
+	&:after{
+		content: url('img/assets/rounded_rectangle_down.png');
+		display:none;
+	}
+
+}
+.sinucircle a{
+	background-image: url('img/assets/sinucircle.png');
+	&:hover{
+		background-image: url('img/assets/sinucircle_down.png');
+	}
+	&:after{
+		content: url('img/assets/sinucircle_down.png');
+		display:none;
+	}
+
+}    
+
+.smoothpursuit a{
+	background-image: url('img/assets/smoothpursuit.png');
+	&:hover{
+		background-image: url('img/assets/smoothpursuit_down.png');
+	}
+	&:after{
+		content: url('img/assets/smoothpursuit_down.png');
+		display:none;
+	}
+
+}
+
+.smoothpursuit2 a{
+	background-image: url('img/assets/smoothpursuit2.png');
+	&:hover{
+		background-image: url('img/assets/smoothpursuit2_down.png');
+	}
+	&:after{
+		content: url('img/assets/smoothpursuit2_down.png');
+		display:none;
+	}
+
+}
+
+.spiral a{
+	background-image: url('img/assets/spiral.png');
+	&:hover{
+		background-image: url('img/assets/spiral_down.png');
+	}
+	&:after{
+		content: url('img/assets/spiral_down.png');
+		display:none;
+	}
+
+}
+
+
+.vertical a{
+	background-image: url('img/assets/vertical.png');
+	&:hover{
+		background-image: url('img/assets/vertical_down.png');
+	}
+	&:after{
+		content: url('img/assets/vertical_down.png');
+		display:none;
+	}
+
+}
+
+
+.zone a{
+	background-image: url('img/assets/zone.png');
+	&:hover{
+		background-image: url('img/assets/zone_down.png');
+	}
+	&:after{
+		content: url('img/assets/zone_down.png');
+		display:none;
+	}
+
+}
+/**icons**/
+
+.icon{
+		width:40px;
+		height:40px;
+		display:block;
+		background-position:center center;
+		background-repeat: no-repeat;
+		background-color:transparent;
+	}
+
+tr .icon, .icon-title{
+	padding-left:20px;
+}
+
+.checkeyes-icon{
+	background-image: url('img/assets/checkeyes_icon.png');
+	
+}
+.cloverleaf-icon{
+	background-image: url('img/assets/cloverleaf_icon.png');
+	
+}
+.dotreaction-icon{
+	background-image: url('img/assets/dotreaction_icon.png');
+	
+}
+
+
+.ellipse-icon{
+	background-image: url('img/assets/ellipse_icon.png');
+	
+}
+.select-assessment-icon{
+	background-image: url('img/assets/select_assessment_icon.png');
+	
+}
+.feedbackmode-icon{
+	background-image: url('img/assets/feedbackmode_icon.png');
+	
+}
+
+
+.figure-8-icon{
+	background-image: url('img/assets/figure_8_icon.png');
+	
+}
+.gazereader-icon{
+	background-image: url('img/assets/gazereader_icon.png');
+	
+}
+.horizontal-icon{
+	background-image: url('img/assets/horizontal_icon.png');
+	
+}
+
+.rotating-figure-8-icon{
+	background-image: url('img/assets/rotating_figure8_icon.png');
+	
+}
+.rounded-rectangle-icon{
+	background-image: url('img/assets/roundedrectangle_icon.png');
+	
+}
+.sinucircle-icon{
+	background-image: url('img/assets/sinucircle_icon.png');
+	
+}    
+
+.smoothpursuit-icon{
+	background-image: url('img/assets/smoothpursuit_icon.png');
+	
+}
+
+.smoothpursuit2-icon{
+	background-image: url('img/assets/smoothpursuit2_icon.png');
+	
+}
+
+.spiral-icon{
+	background-image: url('img/assets/spiral_icon.png');
+	
+}
+
+
+.vertical-icon{
+	background-image: url('img/assets/vertical_icon.png');
+	
+}
+
+
+.zone-icon{
+	background-image: url('img/assets/zone_icon.png');
+	
+}
+
+
+     

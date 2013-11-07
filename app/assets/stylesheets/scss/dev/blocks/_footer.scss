@@ -1,0 +1,39 @@
+
+
+.footer{
+	min-width:800px;
+	width:100%;
+	height:$footer-height;
+	@include clrfx;
+	@include box-shadow(0 -1px 0 $white);
+}
+
+.bottom-logo{
+	@include ir;
+	background: url('img/assets/BLINK_logo_small.png') center center no-repeat transparent;
+	display: block;
+	height: $footer-height;
+	padding-left:4%;
+	padding-right:22px;
+	width:21%;
+	min-width: 286px;
+	float:left;
+	@include box-shadow(1px 0 0 $white);
+}
+
+.copyright{
+	width:21%;
+	min-width: 286px;
+	height: $footer-height;
+	padding-right:4%;
+	float:right;
+	@include box-shadow(-1px 0 0 $white);
+
+	h6{
+		padding: 0;
+		font-size:16px;
+		margin:20px 0 0 20px;
+	}
+
+	
+}

@@ -1,0 +1,13 @@
+@include flag(scss/utilities/type/_linktype);
+h2{
+	font-family: AvianoSansLight;
+	font-weight: normal;
+	font-style: normal;
+	text-align: center;
+	text-transform: uppercase;
+	font-size: 2.5em;
+}
+
+button{
+	@include dosis;
+}

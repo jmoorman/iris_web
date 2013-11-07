@@ -1,0 +1,50 @@
+
+
+//colors
+$lightest-gradient-blue: #33313c;
+$darkest-gradient-blue: #191725;
+
+$orange: orange;
+
+$yellow: yellow;
+
+
+$green: #0f7867;
+
+$red: #b8301a;
+
+$black: black;
+
+$white: #eaeaea;
+
+
+$pre-grey: #302f33;
+
+$table-header-grey: #222328;
+$table-header-gray: #222328;
+
+$even-grey: #232228;
+$even-gray: #232228;
+
+$odd-grey: #2c2e32;
+$odd-gray: #2c2e32;
+
+/*color variables*/
+
+
+
+//type
+@mixin dosis{
+	font-family: 'Dosis', sans-serif;
+	font-weight:400;
+}
+@mixin dosis-light{
+	font-family: 'Dosis', sans-serif;
+	font-weight:300;
+}
+@mixin open-san{
+	font-family: 'Open Sans', sans-serif;
+	font-weight:400;
+}
+
+

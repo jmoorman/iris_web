@@ -1,0 +1,17 @@
+
+
+@include bigflag(scss/dev/blocks/block);
+//for pervasive block like items
+
+@include flag(scss/dev/blocks/_globals-block);
+
+@import '_globals-block';
+@import 'header';
+@import 'footer';
+@import 'main';
+
+
+
+
+
+
