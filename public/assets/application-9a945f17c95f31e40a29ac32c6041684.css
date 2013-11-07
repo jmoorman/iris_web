@@ -954,7 +954,7 @@ tr .icon, .icon-title {
   color: transparent;
   font: 0/0 a;
   text-shadow: none;
-  background: url("BLINK_logo_small.png") center center no-repeat transparent;
+  background: url("assets/BLINK_logo_small.png") center center no-repeat transparent;
   display: block;
   height: 60px;
   padding-left: 4%;
