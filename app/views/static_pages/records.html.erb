@@ -1,0 +1,47 @@
+<%= javascript_tag 'window.onload = function() { buildResults() }' %>
+      <div class='main'>
+        <div class='content results'>
+          <div class="controls">
+            <button class="pill green active">List</button>
+            <button class="pill green" onclick="parent.location='/results-month.html'">1 MON</button>
+            <button class="pill green" onclick="parent.location='/results-day.html'">1 DAY</button>
+
+          </div>
+          <div class="results-table" id="dynamic-results">
+
+            <!-- <table>
+              <tr class="table-header">
+                <th class="icon-title">Icon</th>
+                <th>Test Name</th>
+                <th>Date</th>
+                <th>Time</th>
+                <th>Score</th>
+              </tr>
+              <tr class="odd">
+                <td><span class="icon figure-8-icon"></span></td>
+                <td class="test-title">Figure 8</td>
+                <td class="test-date">11.09.12</td>
+                <td class="test-time">1:08 PM</td>
+                <td class="test-score">0.62</td>
+              </tr>
+              <tr class="even">
+                <td><span class="icon zone-icon"></span></td>
+                <td class="test-title">zone</td>
+                <td class="test-date">11.09.12</td>
+                <td class="test-time">1:08 PM</td>
+                <td class="test-score">0.62</td>
+              </tr>
+            </table>   -->
+
+          </div>
+         
+            <div class="details">
+              <h4>Detailed View</h4>
+              <div class="detail-container">
+
+              </div>
+            </div>
+         
+          
+        </div><!--/.content-->
+      </div><!--/.main-->
