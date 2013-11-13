@@ -1,3 +1,5 @@
+window.unload = function() {}
+
 var Iris = { APIVersion : "0.0.1" };
 
 if ((typeof(WebSocket) == 'undefined') && (typeof(MozWebSocket) != 'undefined')) WebSocket = MozWebSocket;
