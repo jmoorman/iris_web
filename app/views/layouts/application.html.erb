@@ -9,9 +9,11 @@
 <body>
   <div class='top landing'>
     <%= render 'layouts/header' %>
-    <%= yield %>
-    <%= render 'layouts/footer' %>
+    <div class='main'>
+      <%= yield %>
+    </div>
   </div><!--/.top-->
+  <%= render 'layouts/footer' %>
 </body>
 </html>
 

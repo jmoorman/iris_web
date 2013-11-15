@@ -1,8 +1,13 @@
 <div class='header'>
   <div class='utility'>
-    <button id='cancel' class='pill back' style='visibility:hidden'>
-      Cancel
-    </button>
+    <% if signed_in? then %>
+      <%= button_to "Sign out", signout_path, method: :delete, class: "pill" %>
+    <% else %>
+      <%= button_to "Sign up", signup_path, method: :get, class: "pill" %>
+    <% end %>
+    <% #<button id='cancel' class='pill back' style='visibility:hidden'> %>  
+      <% #Cancel %>
+    <% #</button> %>
   </div>
   <div class='top-logo'>
     <div class='h1'>
