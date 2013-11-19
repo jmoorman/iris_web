@@ -146,7 +146,7 @@ Iris.Controller.prototype =
     
     this._socket.onerror = function(event)
     { 
-      this.onclose(event);
+      //this.onclose(event);
     };
   }
 }
