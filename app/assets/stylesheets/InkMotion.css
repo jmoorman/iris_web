@@ -1,0 +1,53 @@
+* {
+	margin: 0;
+	padding: 0;
+	user-select: none;
+	-webkit-user-select: none;
+	-moz-user-select: none;
+}
+
+body { font: 14px Helvetica, Sans-Serif; }
+
+.youtube{
+	width:853px;
+	padding:10px;
+	height:500px;
+	position:absolute;
+	margin-top:-240px;
+	margin-left:-426px;
+	top:50%;
+	left:50%;
+	background-color: rgba(0,0,0,.3);
+	border-radius: 5px;
+}
+
+.layer {
+	position: fixed;
+	left: 0px;
+	top: 0px;
+}
+
+#page-wrap { width: 800px; margin: 25px auto; }
+a { text-decoration: none; }
+ul { list-style: none; }
+p { margin: 15px 0; }
+#out li{color:#FFFFFF;}
+
+/* LEVEL ONE */
+ul.dropdown { position: relative; }
+ul.dropdown li { width: 325px; font-weight: bold; float: left; zoom: 1; background: rgba(0,0,0,.7); }
+ul.dropdown a:hover { color: #FFFFFF; }
+ul.dropdown a:active { color: #FFFFFF; }
+ul.dropdown li a { display: block; padding: 4px 8px; border-right: 1px solid #333; color: #DDDDDD; }
+ul.dropdown li:last-child a { border-right: none; } /* Doesn't work in IE */
+ul.dropdown li.hover, ul.dropdown li:hover { background-image: url('../Images/menu.png'); color: #FFFFFF; position: relative; }
+ul.dropdown li.hover a { color: #FFFFFF; }
+
+ /* LEVEL TWO */
+ul.dropdown ul { width: 125px; visibility: hidden; position: absolute; top: 100%; left: 0; }
+ul.dropdown ul li { font-weight: normal; background: rgba(0,0,0,.7); border-bottom: 1px solid #333; float: none; }
+ul.dropdown ul li a { border-right: none; width: 100%; color: #DDDDDD; display: inline-block; } /* IE 6 & 7 Needs Inline Block */
+
+/* LEVEL THREE */
+ul.dropdown ul ul { left: 100%; top: 0; }
+ul.dropdown li:hover > ul { visibility: visible; }

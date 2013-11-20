@@ -366,6 +366,18 @@ body{
 
 }
 
+.leapmotion a{
+	background-image: url('leap_motion.png');
+	&:hover{
+		background-image: url('smoothpursuit2_down.png');
+	}
+	&:after{
+		content: url('smoothpursuit2_down.png');
+		display:none;
+	}
+
+}
+
 .spiral a{
 	background-image: url('spiral.png');
 	&:hover{
