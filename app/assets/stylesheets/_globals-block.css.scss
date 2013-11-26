@@ -122,6 +122,14 @@ body{
 	width:90px;
 	padding: 12px 0 8px;
 }
+
+.test-canvas {
+  position: relative;
+  zIndex: 2999;
+  width: 100%;
+  height: 100%;
+  background-color: black;
+}
 /* classnames
 .quickstart 
 .quickstart-icon

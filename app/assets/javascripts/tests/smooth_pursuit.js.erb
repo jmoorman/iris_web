@@ -1,0 +1,97 @@
+var smoothpursuit = {
+
+  load: function()
+  {
+    $('a#quickstart').click(function(e){ e.preventDefault(); this.begin(); return false; });
+  },
+
+  begin: function()
+  {
+    document.controller = new Iris.Controller("ws://localhost:9002"); 
+    smoothpursuit._target = new Image();
+    smoothpursuit._target.src = "<%= asset_path 'ball_icon.png' %>";
+    this._canvas = $('.test-canvas')[0];
+    var context = this._canvas.getContext('2d');
+    context.fillRect(0, 0, this._canvas.width, this._canvas.height);
+    document.controller.beginTracking();
+    smoothpursuit.animate((new Date()).getTime());
+  },
+
+  cancel: function()
+  {
+    document.controller.endTracking();
+  },
+
+  save: function()
+  {
+    var xml = "<run>\n<testname>scripts/smooth_pursuit.lua</testname>\n<score>" + document.controller._score + "</score>\n"
+    xml = xml + "<camera>\n<test>\n"
+    var log = document.controller._log;
+    for(var i = 0; i < log.length; i++)
+    {
+      xml = xml + log[i].timestamp + "," + log[i].target.x + "," + log[i].target.y + "," + log[i].pupil.x + ","+ log[i].pupil.y + ","+ log[i].gaze.x + ","+ log[i].gaze.y + "," + log[i].pupil_size.x + "," + log[i].pupil_size.y + "\n";
+    }
+    xml = xml + "</test>\n</camera>\n</run>"
+    writeLogFile(xml, (new Date()).getTime() + ".xml");
+  },
+
+  animate: function(start_time)
+  {
+    this._canvas = $('.test-canvas')[0];
+    this._canvas.width = 1024; //this._canvas.offsetWidth;
+    this._canvas.height = 768; //this._canvas.offsetHeight;
+    var context = this._canvas.getContext('2d');
+    var radius = Math.min(this._canvas.width, this._canvas.height) * 0.4;
+
+    var context = this._canvas.getContext('2d');
+    context.fillStyle = 'black';
+    context.fillRect(0, 0, this._canvas.width, this._canvas.height);
+    
+    var elapsed_time = ((new Date()).getTime() - start_time) / 1000.0;
+    var x = 0;
+    var y = 0;
+    if(elapsed_time < 40)
+    {
+      if (elapsed_time < 6)
+      {
+        x = 0;
+        y = 0;
+      }
+      else if(elapsed_time < 21)
+      {
+        var radians_per_second = 2 * Math.PI * 0.4; // 0.4 Hz   
+        var theta = (elapsed_time - 6) * radians_per_second - (Math.PI / 2);
+        x = radius * Math.cos(theta);
+        y = radius * Math.sin(theta);
+      }
+      else if(elapsed_time < 23)
+      {
+        x = 0;
+        y = 0;
+      }
+      else if(elapsed_time < 38)
+      {
+        var radians_per_second = 2 * Math.PI * 0.4; // 0.4 Hz   
+        var theta = (elapsed_time - 8) * radians_per_second - (Math.PI / 2);
+        x = radius * Math.cos(theta);
+        y = radius * Math.sin(theta);
+      }
+      else
+      {
+        x = 0;
+        y = 0;
+      }
+      context.drawImage(smoothpursuit._target, x + this._canvas.width / 2 - this._target.width / 2, 
+        y + this._canvas.height / 2 - this._target.height / 2); 
+      document.controller.setTarget(x, y);
+      requestAnimFrame(function() {
+        smoothpursuit.animate(start_time);
+      });
+    }
+    else
+    {
+      smoothpursuit.cancel();
+      document.controller.requestLog(this.save);
+    }  
+  }
+}

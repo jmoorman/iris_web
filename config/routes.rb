@@ -1,7 +1,8 @@
 IrisApp::Application.routes.draw do
-  get "tests/index"
-  get "tests/show"
+
   resources :users
+  resources :records
+  resources :tests
   resources :sessions, only: [:new, :create, :destroy]
   
   get '/signup', to: 'users#new'

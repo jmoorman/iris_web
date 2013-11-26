@@ -7,8 +7,7 @@
 
           </div>
           <div class="results-table" id="dynamic-results">
-
-            <!-- <table>
+            <table>
               <tr class="table-header">
                 <th class="icon-title">Icon</th>
                 <th>Test Name</th>
@@ -16,6 +15,22 @@
                 <th>Time</th>
                 <th>Score</th>
               </tr>
+              <% odd = true %>
+              <% @records.each do |record| %>
+                <% if odd then %>
+                  <tr class="odd">
+                <% else %>
+                  <tr class="even">
+                <% end %>
+                <td><span class="icon figure-8-icon"></span></td>
+                <td class="test-title"><%= record.test.name %></td>
+                <td class="test-date"><%= record.date_taken.to_date.to_s %></td>
+                <td class="test-time"><%= record.date_taken.to_time.to_s %></td>
+                <td class="test-score"><%= record.score %></td>
+                </tr>
+              <% end %>
+            </table>
+            <!-- <table>
               <tr class="odd">
                 <td><span class="icon figure-8-icon"></span></td>
                 <td class="test-title">Figure 8</td>

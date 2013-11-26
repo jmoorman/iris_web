@@ -5,3 +5,7 @@
 #
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
+tests = Test.create([
+    { name: 'Smooth Pursuit', object: 'smoothpursuit'}, 
+    { name: 'Leap Motion', object: 'leapmotion'}
+  ])

@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  user_id: 1
+  subject: MyString
+  date_taken: 2013-11-21 14:19:32
+  score: 9.99
+  quality: 9.99
+  file: MyText
+
+two:
+  user_id: 1
+  subject: MyString
+  date_taken: 2013-11-21 14:19:32
+  score: 9.99
+  quality: 9.99
+  file: MyText

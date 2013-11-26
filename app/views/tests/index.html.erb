@@ -1,6 +1,14 @@
       <div class='main'>
         <div class='content assessments'>
           <div class="box-wrap">
+            <% @tests.each do |test| %>
+              <div class="box box-<%= "#{test.id} #{test.object}" %>">
+                <%= link_to test.name, test %>
+                <div class="hr"></div>
+                <h3 href=""><%= test.name %></h3>
+              </div>
+            <% end %>
+            <% if false then %>
             <div class="box box-1 checkeyes">
               <%= link_to 'Check Eyes', static_pages_calibration_path %>
               <div class="hr"></div>
@@ -91,7 +99,7 @@
               <div class="hr"></div>
               <h3 href="">Zone</h3>
             </div>
-
+            <% end %>
           </div>
           
         </div><!--/.content-->
