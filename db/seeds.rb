@@ -6,6 +6,10 @@
 #   cities = City.create([{ name: 'Chicago' }, { name: 'Copenhagen' }])
 #   Mayor.create(name: 'Emanuel', city: cities.first)
 tests = Test.create([
-    { name: 'Smooth Pursuit', object: 'smoothpursuit'}, 
-    { name: 'Leap Motion', object: 'leapmotion'}
+    { name: 'Smooth Pursuit', object: 'smoothpursuit', icon: 'smoothpursuit-icon'}, 
+    { name: 'Leap Motion', object: 'leapmotion', icon: 'gazereader-icon'}
+  ])
+
+users = User.create([
+    { email: 'fake@fake.com', password: 'fake123', password_confirmation: 'fake123' }
   ])

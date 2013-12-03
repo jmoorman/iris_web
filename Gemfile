@@ -5,6 +5,8 @@ ruby '2.0.0'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '4.0.1'
 gem 'bcrypt-ruby'
+gem 'json'
+
 #gem 'paperclip', '~> 3.0'
 
 group :development do

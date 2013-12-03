@@ -1,0 +1,38 @@
+replay = function(data)
+{
+  var target = new Image();
+  target.src = "<%= asset_path 'ball_icon.png' %>";
+  var canvas = $('.test-canvas')[0];
+  var context = canvas.getContext('2d');
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  animateReplay(target, (new Date()).getTime(), data, 0)
+}
+
+animateReplay = function(target, start_time, data, i)
+{
+  var canvas = $('.test-canvas')[0];
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  var context = canvas.getContext('2d');
+  context.fillStyle = 'black'
+  context.fillRect(0, 0, canvas.width, canvas.height);
+
+  var elapsed_time = (new Date()).getTime() - start_time;
+  while((data[i][0] - data[0][0])/1000 < elapsed_time && i < data.length)
+  {
+    i = i + 1
+  }
+  if(i < data.length)
+  {
+    var x = Number(data[i][1]) + canvas.width / 2 + target.width / 2;
+    var y = canvas.height / 2 - Number(data[i][2]) - target.height / 2;
+    context.drawImage(target, x, y);
+    
+    x = Number(data[i][5]) + canvas.width / 2 + target.width / 2;
+    y = canvas.height / 2 - Number(data[i][6]) - target.height / 2;
+    context.fillStyle = 'white';
+    context.arc(x, y, 8, 0, 2*Math.PI);
+    context.fill();
+    requestAnimFrame(function() { animateReplay(target, start_time, data, i);})
+  }
+}

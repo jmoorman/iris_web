@@ -1,6 +1,16 @@
 <div class='content landing'>
-	   <div id="InkMotion"></div><div id="out"></div>
+<% #	   <div id="InkMotion"></div><div id="out"></div> %>
   <canvas class='test-canvas' id='test'></canvas>
+  <%= form_for @test.records.build(date_taken: DateTime.now, user_id: current_user.id) do |f| %>
+    <%= f.hidden_field :subject %> 
+    <%= f.hidden_field :score %>
+    <%= f.hidden_field :quality %>
+    <%= f.hidden_field :file %>
+    <%= f.hidden_field :date_taken %>
+    <%= f.hidden_field :user_id %>
+    <%= f.hidden_field :test_id %>
+    <%= f.submit "Upload" %> 
+  <% end %>
 </div><!--/.content-->
 <% #javascript_tag "window.onload = setTimeout(function() { window.app = new InkMotion(); }, 200)" %>
 <%= javascript_tag "$('.test-canvas').click(#{@test.object}.begin)" %>
