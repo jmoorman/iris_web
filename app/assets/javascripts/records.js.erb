@@ -24,11 +24,11 @@ animateReplay = function(target, start_time, data, i)
   }
   if(i < data.length)
   {
-    var x = Number(data[i][1]) + canvas.width / 2 + target.width / 2;
+    var x = Number(data[i][1]) + canvas.width / 2 - target.width / 2;
     var y = canvas.height / 2 - Number(data[i][2]) - target.height / 2;
     context.drawImage(target, x, y);
     
-    x = Number(data[i][5]) + canvas.width / 2 + target.width / 2;
+    x = Number(data[i][5]) + canvas.width / 2 - target.width / 2;
     y = canvas.height / 2 - Number(data[i][6]) - target.height / 2;
     context.fillStyle = 'white';
     context.arc(x, y, 8, 0, 2*Math.PI);

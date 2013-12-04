@@ -39,17 +39,20 @@ $header-height:83px;
 	@include box-shadow(1px 0 0 $white);
 	position:relative;
 	button{
-		position:relative;
+		float:left;
+    position:relative;
 		top:20px;
 		display:block;
 		margin:0 auto;
-		
+    margin-left:20px;
 	}
 	input{
+		float:left;
 		position:relative;
 		top:20px;
 		display:block;
 		margin:0 auto;
+    margin-left:20px;
 		
 	}
 

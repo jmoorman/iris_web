@@ -10,7 +10,7 @@ class RecordsController < ApplicationController
   end
 
   def index
-    @records = Record.all
+    @records = Record.all.order('records.date_taken desc')
   end
 
   def show
