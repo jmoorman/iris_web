@@ -25,7 +25,7 @@ animateReplay = function(target, start_time, data, i)
   if(i < data.length)
   {
     var x = data[i].target.x + canvas.width / 2 - target.width / 2;
-    var y = canvas.height / 2 - data[i].target.y - target.height / 2;
+    var y = data[i].target.y + canvas.height / 2 - target.height / 2;
     context.drawImage(target, x, y);
     
     x = data[i].pupil.x + canvas.width / 2 - target.width / 2;
