@@ -18,18 +18,18 @@ animateReplay = function(target, start_time, data, i)
   context.fillRect(0, 0, canvas.width, canvas.height);
 
   var elapsed_time = (new Date()).getTime() - start_time;
-  while((data[i][0] - data[0][0])/1000 < elapsed_time && i < data.length)
+  while((data[i].timestamp - data[0].timestamp)/1000 < elapsed_time && i < data.length)
   {
     i = i + 1
   }
   if(i < data.length)
   {
-    var x = Number(data[i][1]) + canvas.width / 2 - target.width / 2;
-    var y = canvas.height / 2 - Number(data[i][2]) - target.height / 2;
+    var x = data[i].target.x + canvas.width / 2 - target.width / 2;
+    var y = canvas.height / 2 - data[i].target.y - target.height / 2;
     context.drawImage(target, x, y);
     
-    x = Number(data[i][5]) + canvas.width / 2 - target.width / 2;
-    y = canvas.height / 2 - Number(data[i][6]) - target.height / 2;
+    x = data[i].pupil.x + canvas.width / 2 - target.width / 2;
+    y = canvas.height / 2 - data[i].pupil.y - target.height / 2;
     context.fillStyle = 'white';
     context.arc(x, y, 8, 0, 2*Math.PI);
     context.fill();

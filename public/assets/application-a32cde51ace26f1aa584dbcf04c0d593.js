@@ -10710,8 +10710,9 @@ Iris.Controller.prototype =
       var eventData = JSON.parse(event.data);
       if (eventData.type == "log")
       {
-        this._log = eventData.data;
-        this._score = eventData.score;
+        this._log = eventData.data.raw;
+        this._score = eventData.data.score;
+        this._quality = eventData.data.quality;
         setTimeout(this._logCallbacks.pop(), 5);
       }
     }
@@ -12584,10 +12585,45 @@ function buildResults() {
     window.requestFileSystem(window.TEMPORARY, 1024*1024, generateResultsList, errorHandler);
 
 };
-(function() {
+replay = function(data)
+{
+  var target = new Image();
+  target.src = "/assets/ball_icon.png";
+  var canvas = $('.test-canvas')[0];
+  var context = canvas.getContext('2d');
+  context.fillRect(0, 0, canvas.width, canvas.height);
+  animateReplay(target, (new Date()).getTime(), data, 0)
+}
 
+animateReplay = function(target, start_time, data, i)
+{
+  var canvas = $('.test-canvas')[0];
+  canvas.width = canvas.offsetWidth;
+  canvas.height = canvas.offsetHeight;
+  var context = canvas.getContext('2d');
+  context.fillStyle = 'black'
+  context.fillRect(0, 0, canvas.width, canvas.height);
 
-}).call(this);
+  var elapsed_time = (new Date()).getTime() - start_time;
+  while((data[i].timestamp - data[0].timestamp)/1000 < elapsed_time && i < data.length)
+  {
+    i = i + 1
+  }
+  if(i < data.length)
+  {
+    var x = data[i].target.x + canvas.width / 2 - target.width / 2;
+    var y = canvas.height / 2 - data[i].target.y - target.height / 2;
+    context.drawImage(target, x, y);
+    
+    x = data[i].pupil.x + canvas.width / 2 - target.width / 2;
+    y = canvas.height / 2 - data[i].pupil.y - target.height / 2;
+    context.fillStyle = 'white';
+    context.arc(x, y, 8, 0, 2*Math.PI);
+    context.fill();
+    requestAnimFrame(function() { animateReplay(target, start_time, data, i);})
+  }
+}
+;
 (function() {
 
 
@@ -13154,13 +13190,13 @@ var smoothpursuit = {
   begin: function()
   {
     document.controller = new Iris.Controller("ws://localhost:9002"); 
-    this._target = new Image();
-    this._target.src = "/assets/ball_icon.png";
+    smoothpursuit._target = new Image();
+    smoothpursuit._target.src = "/assets/ball_icon.png";
     this._canvas = $('.test-canvas')[0];
     var context = this._canvas.getContext('2d');
     context.fillRect(0, 0, this._canvas.width, this._canvas.height);
     document.controller.beginTracking();
-    this.animate((new Date()).getTime());
+    smoothpursuit.animate((new Date()).getTime());
   },
 
   cancel: function()
@@ -13170,19 +13206,28 @@ var smoothpursuit = {
 
   save: function()
   {
-    var xml = "<run>\n<testname>scripts/smooth_pursuit.lua</testname>\n<score>" + document.controller._score + "</score>\n"
-    xml = xml + "<camera>\n<test>\n"
-    var log = document.controller._log;
-    for(var i = 0; i < log.length; i++)
-    {
-      xml = xml + log[i].timestamp + "," + log[i].target.x + "," + log[i].target.y + "," + log[i].pupil.x + ","+ log[i].pupil.y + ","+ log[i].gaze.x + ","+ log[i].gaze.y + "," + log[i].pupil_size.x + "," + log[i].pupil_size.y + "\n";
-    }
-    xml = xml + "</test>\n</camera>\n</run>"
-    writeLogFile(xml, (new Date()).getTime() + ".xml");
+    $('#record_subject').val('anon');
+    $('#record_file').val(JSON.stringify(document.controller._log));
+    $('#record_score').val(document.controller._score);
+    $('#record_quality').val(document.controller._quality);
+    //$('#record_file').val("log");
+    //$('#record_score').val("6");
+    //$('#record_quality').val("0.6");
+    $('#record_date_taken').val(new Date());
+    //var xml = "<run>\n<testname>scripts/smooth_pursuit.lua</testname>\n<score>" + document.controller._score + "</score>\n"
+    //xml = xml + "<camera>\n<test>\n"
+    //var log = document.controller._log;
+    //for(var i = 0; i < log.length; i++)
+    //{
+    //  xml = xml + log[i].timestamp + "," + log[i].target.x + "," + log[i].target.y + "," + log[i].pupil.x + ","+ log[i].pupil.y + ","+ log[i].gaze.x + ","+ log[i].gaze.y + "," + log[i].pupil_size.x + "," + log[i].pupil_size.y + "\n";
+    //}
+    //xml = xml + "</test>\n</camera>\n</run>"
+    //writeLogFile(xml, (new Date()).getTime() + ".xml");
   },
 
   animate: function(start_time)
   {
+    this._canvas = $('.test-canvas')[0];
     this._canvas.width = this._canvas.offsetWidth;
     this._canvas.height = this._canvas.offsetHeight;
     var context = this._canvas.getContext('2d');
@@ -13226,16 +13271,16 @@ var smoothpursuit = {
         x = 0;
         y = 0;
       }
-      context.drawImage(this._target, x + this._canvas.width / 2 - this._target.width / 2, 
+      context.drawImage(smoothpursuit._target, x + this._canvas.width / 2 - this._target.width / 2, 
         y + this._canvas.height / 2 - this._target.height / 2); 
       document.controller.setTarget(x, y);
       requestAnimFrame(function() {
-        this.animate(start_time);
+        smoothpursuit.animate(start_time);
       });
     }
     else
     {
-      this.cancel();
+      smoothpursuit.cancel();
       document.controller.requestLog(this.save);
     }  
   }
