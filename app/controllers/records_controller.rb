@@ -15,11 +15,6 @@ class RecordsController < ApplicationController
 
   def show
     @record = Record.find(params[:id])
-    @data = []
-    Hash.from_xml(@record.file)['run']['camera'][0]['test'].lines do |line|
-      line = line.chomp
-      @data << line.split(',') if line != ""
-    end
   end
 
   private

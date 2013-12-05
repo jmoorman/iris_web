@@ -1,4 +1,4 @@
 <div class='content landing'>
   <canvas class='test-canvas' id='test'></canvas>
 </div><!--/.content-->
-<%= javascript_tag "$('.test-canvas').click(function() { replay(#{@data.to_json}) } )" %>
+<%= javascript_tag "$('.test-canvas').click(function() { replay(#{@data.file}) } )" %>
