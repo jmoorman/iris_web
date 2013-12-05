@@ -18,9 +18,9 @@
               <% odd = true %>
               <% @records.each do |record| %>
                 <% if odd then %>
-                  <tr class="odd">
+                  <tr data-link="<%= record_path(record) %>" class="odd">
                 <% else %>
-                  <tr class="even">
+                  <tr data-link="<%= record_path(record) %>" class="even">
                 <% end %>
                 <td><span class="icon <%= record.test.icon %>"></span></td>
                 <td class="test-title"><%= record.test.name %></td>
@@ -28,6 +28,7 @@
                 <td class="test-time"><%= record.date_taken.strftime("%I:%M%p %Z") %></td>
                 <td class="test-score"><%= record.score %></td>
                 </tr>
+                <% odd = !odd %>
               <% end %>
             </table>
           </div>
@@ -35,8 +36,12 @@
           <div class="details">
             <h4>Detailed View</h4>
             <div class="detail-container">
-              <button class="pill green" onclick="alert('hi')">Database</button>
+              <% #<button class="pill green" onclick="alert('nevermind.')">Button</button> %>
+              <canvas class="replay-canvas"></canvas>
             </div>
           </div>
         </div><!--/.content-->
+        <script>
+          $('tr[data-link]').click(function() { window.location = $(this).data("link") });
+        </script>
       </div><!--/.main-->

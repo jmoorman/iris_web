@@ -130,6 +130,14 @@ body{
   zIndex: 2999;
   background-color: black;
 }
+
+.replay-canvas {
+	position:relative;
+  width:100%;
+  height:100%;
+  display:block;
+  background-color: black;
+}
 /* classnames
 .quickstart 
 .quickstart-icon
