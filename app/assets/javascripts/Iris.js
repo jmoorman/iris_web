@@ -104,8 +104,9 @@ Iris.Controller.prototype =
       var eventData = JSON.parse(event.data);
       if (eventData.type == "log")
       {
-        this._log = eventData.data;
-        this._score = eventData.score;
+        this._log = eventData.data.raw;
+        this._score = eventData.data.score;
+        this._quality = eventData.data.quality;
         setTimeout(this._logCallbacks.pop(), 5);
       }
     }

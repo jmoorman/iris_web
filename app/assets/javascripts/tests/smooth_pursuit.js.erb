@@ -24,15 +24,23 @@ var smoothpursuit = {
 
   save: function()
   {
-    var xml = "<run>\n<testname>scripts/smooth_pursuit.lua</testname>\n<score>" + document.controller._score + "</score>\n"
-    xml = xml + "<camera>\n<test>\n"
-    var log = document.controller._log;
-    for(var i = 0; i < log.length; i++)
-    {
-      xml = xml + log[i].timestamp + "," + log[i].target.x + "," + log[i].target.y + "," + log[i].pupil.x + ","+ log[i].pupil.y + ","+ log[i].gaze.x + ","+ log[i].gaze.y + "," + log[i].pupil_size.x + "," + log[i].pupil_size.y + "\n";
-    }
-    xml = xml + "</test>\n</camera>\n</run>"
-    writeLogFile(xml, (new Date()).getTime() + ".xml");
+    $('#record_subject').val('anon');
+    $('#record_log').val(document.controller._log);
+    $('#record_score').val(document.controller._score);
+    $('#record_quality').val(document.controller._quality);
+    //$('#record_file').val("log");
+    //$('#record_score').val("6");
+    //$('#record_quality').val("0.6");
+    $('#record_date_taken').val(new Date());
+    //var xml = "<run>\n<testname>scripts/smooth_pursuit.lua</testname>\n<score>" + document.controller._score + "</score>\n"
+    //xml = xml + "<camera>\n<test>\n"
+    //var log = document.controller._log;
+    //for(var i = 0; i < log.length; i++)
+    //{
+    //  xml = xml + log[i].timestamp + "," + log[i].target.x + "," + log[i].target.y + "," + log[i].pupil.x + ","+ log[i].pupil.y + ","+ log[i].gaze.x + ","+ log[i].gaze.y + "," + log[i].pupil_size.x + "," + log[i].pupil_size.y + "\n";
+    //}
+    //xml = xml + "</test>\n</camera>\n</run>"
+    //writeLogFile(xml, (new Date()).getTime() + ".xml");
   },
 
   animate: function(start_time)
