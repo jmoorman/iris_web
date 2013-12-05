@@ -46,8 +46,8 @@ var smoothpursuit = {
   animate: function(start_time)
   {
     this._canvas = $('.test-canvas')[0];
-    this._canvas.width = this._canvas.offsetWidth;
     this._canvas.height = this._canvas.offsetHeight;
+    this._canvas.width = this._canvas.offsetWidth;
     var context = this._canvas.getContext('2d');
     var radius = Math.min(this._canvas.width, this._canvas.height) * 0.4;
 
