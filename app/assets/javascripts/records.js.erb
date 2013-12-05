@@ -11,8 +11,8 @@ replay = function(data)
 animateReplay = function(target, start_time, data, i)
 {
   var canvas = $('.test-canvas')[0];
-  canvas.width = canvas.offsetWidth;
   canvas.height = canvas.offsetHeight;
+  canvas.width = canvas.offsetWidth;
   var context = canvas.getContext('2d');
   context.fillStyle = 'black'
   context.fillRect(0, 0, canvas.width, canvas.height);
